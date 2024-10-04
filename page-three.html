@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BPCL Report Template Two</title>
+    <title>BPCL Report Three</title>
     <style>
         html {
             margin: 0;
@@ -45,20 +45,23 @@
             border-top-right-radius: 10px;
         }
 
-
         .bottom-div-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             height: 100%;
-            padding: 0 20px;
+            padding: 0 50px;
+            /* Adds 50px margin on both sides */
+            color: rgba(255, 255, 255, 0.7);
+            /* Semi-white color */
+            font-family: Arial, sans-serif;
             font-size: 12px;
         }
 
-        .bottom-div-container .one,
-        .bottom-div-container .three {
-            flex: 0 0 auto;
-            color: white;
+        .left-text {
+            /* Left aligned text */
+            text-align: left;
+            color: #FFFFFFB2;
             font-family: Arial;
             font-size: 10px;
             font-weight: 500;
@@ -66,15 +69,18 @@
             text-align: right;
         }
 
-
-        .bottom-div-container .two {
-            flex: 1 1 auto;
+        .right-text {
+            /* Right aligned text */
+            text-align: right;
             text-align: center;
-            color: #FFFFFFB2;
+            color: white;
             font-family: Arial;
             font-weight: 400;
             line-height: 16px;
-            text-align: center;
+        }
+
+        .report-number {
+            color: white;
         }
 
         .top-div {
@@ -312,17 +318,12 @@
 
         <div class="bottom-div">
             <div class="bottom-div-container">
-                <div class="bottom-div-container one">
-                    <p class="bottom-div-para"> Report No: <span class="report-number">SCR0003K</span> |
-                        <span>Thursday
-                            29th August, 2019</span>
-                        | <span>13:47</span>
-                    </p>
-                </div>
-                <div></div>
-                <div class="bottom-div-container two">
-                    <span>03</span>
-                </div>
+                <p class="left-text"> Report No: <span class="report-number">SCR0003K</span> |
+                    <span>Thursday
+                        29th August, 2019</span>
+                    | <span>13:47</span>
+                </p>
+                <p class="right-text">03</p>
             </div>
         </div>
 
