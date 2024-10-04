@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five - BPCL Report</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 5%;
+            background-color: #007EC4;
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .bottom-div-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 50px;
+            /* Adds 50px margin on both sides */
+            color: rgba(255, 255, 255, 0.7);
+            /* Semi-white color */
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .left-text {
+            /* Left aligned text */
+            text-align: left;
+            color: #FFFFFFB2;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 11.27px;
+            text-align: right;
+        }
+
+        .right-text {
+            /* Right aligned text */
+            text-align: right;
+            text-align: center;
+            color: white;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+        }
+
+        .report-number {
+            color: white;
+        }
+
+        .top-div {
+            padding: 20px;
+            width: 85%;
+            height: 2%;
+            margin-left: 35px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+        .top-div-one {
+            width: 105px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .bpmarrk-two-title {
+            padding-left: 5px;
+            margin-top: 3px;
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+            color: #0E3D57;
+            opacity: 80%;
+        }
+
+        .middle-div {
+            margin-left: 35px;
+            width: 90%;
+        }
+
+        .middle-div-two {
+            margin-top: 16px;
+            width: 90%;
+            height: 221px;
+            border-radius: 4px;
+            border: 1px solid #CEDFEA;
+        }
+
+        /* Bottom Gases Table */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 18px;
+        }
+
+        .table-header {
+            padding: 12px;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13.52px;
+            color: #0E3D57;
+            text-align: start;
+            background-color: transparent;
+        }
+
+        .table-subheader {
+            padding: 5px 5px 5px 18px;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 20px;
+            color: #000000;
+            text-align: start;
+            background-color: #EAF3F8;
+        }
+
+        tbody td {
+            padding: 5px 5px 5px 18px;
+            border-bottom: 1px solid #ddd;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #000000;
+        }
+
+        tbody td:last-child {
+            text-align: left;
+            color: #5E5E5E;
+        }
+
+        /* Bottom Gases Table */
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="top-div">
+            <div class="top-div-one">
+                <div class="oil-small-image">
+                    <!-- place image here. whether to keep it in an image tag or not -->
+                </div>
+                <span></span>
+                <div>
+                    <p class="bpmarrk-two-title">BPMARRK 2.0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-div">
+
+            <div class="middle-div-one">
+                <div class="content-box">
+                    <div class="content-header">
+                        <p class="header-text">TBP distillation profile</p>
+                        <p class="sub-text">Yields (%wt) of refinery products from crude mix-1 crude oil</p>
+                    </div>
+                    <div class="inner-divider"></div>
+                    <div class="chart">
+                        <canvas id="myChart"></canvas>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="middle-div-two">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="table-header">Gas Composition</th>
+                        </tr>
+                        <tr>
+                            <th class="table-subheader">Gases</th>
+                            <th class="table-subheader">Wt%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Methane</td>
+                            <td>0.0000</td>
+                        </tr>
+                        <tr>
+                            <td>Ethane</td>
+                            <td>0.0100</td>
+                        </tr>
+                        <tr>
+                            <td>Propane</td>
+                            <td>0.2200</td>
+                        </tr>
+                        <tr>
+                            <td>n-Butane</td>
+                            <td>0.8100</td>
+                        </tr>
+                        <tr>
+                            <td>i-Butane</td>
+                            <td>0.1700</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="middle-div-three"></div>
+
+        </div>
+
+        <div class="bottom-div">
+            <div class="bottom-div-container">
+                <p class="left-text"> Report No: <span class="report-number">SCR0003K</span> |
+                    <span>Thursday
+                        29th August, 2019</span>
+                    | <span>13:47</span>
+                </p>
+                <p class="right-text">01</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
