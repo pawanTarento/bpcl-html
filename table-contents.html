@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents</title>
+    <style>
+        .table-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .title-line {
+            border-bottom: 1px solid #ccc;
+            /* Fine line under the title */
+            width: 100%;
+            margin-bottom: 20px;
+            /* Space between the title and content */
+        }
+
+        .toc {
+            width: 600px;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .toc .content-name {
+            padding-right: 10px;
+        }
+
+        .toc .dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted #000;
+            margin-right: 10px;
+        }
+
+        .toc .page-number {
+            text-align: right;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="table-title">Table of Contents</div>
+    <div class="title-line"></div>
+
+    <div class="toc">
+        <ul>
+            <li>
+                <span class="content-name">1. Introduction</span>
+                <span class="dots"></span>
+                <span class="page-number">1</span>
+            </li>
+            <li>
+                <span class="content-name">2. What is good</span>
+                <span class="dots"></span>
+                <span class="page-number">1</span>
+            </li>
+            <li>
+                <span class="content-name">3. Chapter 3 Title</span>
+                <span class="dots"></span>
+                <span class="page-number">15</span>
+            </li>
+            <li>
+                <span class="content-name">4. Conclusion</span>
+                <span class="dots"></span>
+                <span class="page-number">45</span>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

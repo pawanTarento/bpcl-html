@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPCL Report Template One</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            left: 20px;
+            width: 210mm;
+            /* A4 width */
+            height: 297mm;
+            /* A4 height */
+            background-color: #E2EDF2;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .top-div {
+            position: absolute;
+            top: 0;
+            left: 12px;
+            width: 97%;
+            height: 50%;
+            background-color: #ffcccb;
+            border-end-start-radius: 8px;
+            border-end-end-radius: 8px;
+            background: radial-gradient(166.24% 200.7% at 2.85% -16.94%, #007EC4 41.46%, #FFF7C6 92.91%)
+                /* Example background color for visibility */
+        }
+
+        .middle-div {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 65%);
+            /* background-color: #ccffcc; */
+            /* Example background color for visibility */
+            border-color: blue;
+        }
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 5%;
+            background-color: #007EC4;
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+
+        .bottom-div-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+            font-size: 12px;
+        }
+
+        .bottom-div-container .one,
+        .bottom-div-container .three {
+            flex: 0 0 auto;
+            color: white;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 11.27px;
+            text-align: right;
+        }
+
+
+        .bottom-div-container .two {
+            flex: 1 1 auto;
+            text-align: center;
+            color: #FFFFFFB2;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .top-div-one {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+        .bpcl-logo-image {
+            padding: 6px;
+            width: 53px;
+            height: 45px;
+            background-image: url('./bpcl_logo.png');
+            background-size: contain;
+            /* Ensures the image covers the entire div */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+        }
+
+        .bpmarrk-two {
+
+            padding-left: 5px;
+            margin-top: 3px;
+
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+
+
+        }
+
+        .right-text-para-three {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+
+        }
+
+        .right-text-para-two {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+        }
+
+        .top-div-two {
+            margin-top: 110px;
+            margin-left: 40px;
+            font-family: Arial;
+            width: 342px;
+        }
+
+        .top-div-two p {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 27.05px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+
+        .top-div-three {
+            margin-top: 125px;
+            margin-left: 40px;
+        }
+
+        .three-one {
+            font-family: Arial;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18.03px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+
+        .three-two {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: left;
+            color: #FFFFFF;
+
+        }
+
+        .middle-div-top {
+            margin-top: 70px;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .report-number-holder {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: left;
+            color: #303030;
+
+        }
+
+        .report-number {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 13.8px;
+            text-align: left;
+
+        }
+
+        .date-time-para {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: right;
+        }
+
+        .address-middle-para {
+            width: 220px;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            text-align: left;
+            margin-top: 350px;
+            margin-left: 40px;
+            color: #5E5E5E;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="top-div">
+            <div class="top-div-one">
+
+                <div class="top-div-one left">
+                    <div class="oil-small-image">
+                        <!-- place image here. whether to keep it in an image tag or not -->
+                    </div>
+                    <span>
+
+                    </span>
+                    <div>
+                        <p class="bpmarrk-two">BPMARRK 2.0</p>
+                    </div>
+                </div>
+
+                <div class="top-div-one right">
+                    <div class="bpcl-logo-image">
+                        <!-- place image here. whether to keep it in an image tag or not -->
+                    </div>
+                    <div class="right-text">
+                        <p class="right-text-para-one">
+                            <!-- deliberately kept empty -->
+                        </p>
+                        <p class="right-text-para-two">Powered by</p>
+                        <p class="right-text-para-three">Bharat Petroleum Corp. Ltd</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-div-two">
+                <p>Refining characteristics of crude mix-1 crude oil</p>
+            </div>
+
+            <div class="top-div-three">
+                <p class="three-one">Crude Mix-1 Crude Oil</p>
+                <p class="three-two">Source: <span>CPCL</span></p>
+            </div>
+        </div>
+        <div class="middle-div">
+            <div class="middle-div-top">
+                <p class="report-number-holder">Report No: <span class="report-number">SCR0003K</span></p>
+                <span>
+                    <!-- empty span -->
+                </span>
+                <p class="date-time-para">Thursday 29th August, 2019 | 13:47</p>
+            </div>
+
+            <div class="middle-div-bottom">
+                <p class="address-middle-para">
+                    Chennai Petroleum Corporation Ltd
+                    Corporate R&D Centre
+                    Bharat PetroleumCorporation Ltd.
+                    Plot-2A, Udyog Kendra, Surajpur
+                    Greater Noida, UP-201306 (India)
+                </p>
+            </div>
+
+
+        </div>
+        <div class="bottom-div">
+            <div class="bottom-div-container">
+                <div class="bottom-div-container one">
+                    <!-- will keep nothing here -->
+
+                </div>
+                <div class="bottom-div-container two">
+                    <span>© 2024 Bharat Petroleum Corporation Limited</span>
+                </div>
+                <div class="bottom-div-container three">
+                    <span>01</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

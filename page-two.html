@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPCL Report Template Two</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            left: 20px;
+            width: 210mm;
+            /* A4 width */
+            height: 297mm;
+            /* A4 height */
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 5%;
+            background-color: #007EC4;
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+
+        .bottom-div-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+            font-size: 12px;
+        }
+
+        .bottom-div-container .one,
+        .bottom-div-container .three {
+            flex: 0 0 auto;
+            color: white;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 11.27px;
+            text-align: right;
+        }
+
+
+        .bottom-div-container .two {
+            flex: 1 1 auto;
+            text-align: center;
+            color: #FFFFFFB2;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .top-div {
+            padding: 20px;
+            margin-top: 25px;
+            width: 85%;
+            height: 2%;
+            margin-left: 35px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+
+        .top-div-one {
+            width: 105px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .bpmarrk-two-title {
+            padding-left: 5px;
+            margin-top: 3px;
+
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+
+            color: #0E3D57;
+            opacity: 80%;
+
+        }
+
+        .right-text-para-three {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+
+        }
+
+        .right-text-para-two {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+        }
+
+        .report-number {
+            color: white;
+        }
+
+        .bottom-div-para {
+            color: #FFFFFFB2;
+        }
+
+        .middle-div {
+            margin-left: 35px;
+
+        }
+
+        .bpmmarrk-header {
+            font-family: Arial;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 27.05px;
+            text-align: left;
+            color: #0E3D57;
+
+        }
+
+        .middle-div-two {
+            width: 90%;
+        }
+
+        .middle-para {
+
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: left;
+            color: #5E5E5E;
+            word-spacing: 3px;
+        }
+
+        .middle-div-three {
+            margin-top: 300px;
+        }
+
+        /* for table content in the middle section */
+        .table-title {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13.52px;
+            text-align: left;
+
+        }
+
+        .title-line {
+            border-bottom: 1px dotted #ccc;
+            /* Fine line under the title */
+            width: 90%;
+            margin-bottom: 20px;
+            /* Space between the title and content */
+            margin-top: 10px;
+        }
+
+        .toc {
+            width: 600px;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: left;
+            color: #5E5E5E;
+
+        }
+
+        .toc .content-name {
+            padding-right: 10px;
+        }
+
+        .toc .dots {
+
+            flex-grow: 1;
+            border-bottom: 1px dashed #5E5E5E;
+            ;
+            margin-right: 10px;
+        }
+
+        .toc .page-number {
+            text-align: right;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="top-div">
+            <div class="top-div-one">
+                <div class="oil-small-image">
+                    <!-- place image here. whether to keep it in an image tag or not -->
+                </div>
+                <span>
+
+                </span>
+                <div>
+                    <p class="bpmarrk-two-title">BPMARRK 2.0</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="middle-div">
+            <div class="middle-div-one">
+                <p class="bpmmarrk-header">
+                    BPMARRK 2.0
+                </p>
+            </div>
+            <div class="middle-div-two">
+                <p class="middle-para">
+                    BPMARRK® is a patented technology developed by Corporate R&D Centre of Bharat Petroleum
+                    Corporation Ltd., for predicting detailed refining characteristics of crude oil within an hour.
+                    Refining
+                    characteristics of crude oil consist of key information such as TBP distillation yields, detailed
+                    cutwise
+                    distillates and residues qualities, hydrogen consumption in hydroprocessing, Fluid Catalytic
+                    Cracking Unit (FCCU) yields, Delayed Coker Unit (DCU) yields and selection of crude oil/blends for
+                    diverse business decisions.
+
+
+                </p>
+                <p class="middle-para">
+                    BPMARRK® indeed helps in generating quality data, reducing human efforts, chemical/solvents
+                    consumptions in laboratory and time from one month to one hour for detailed crude oil
+                    characterizations.
+                    BPMARRK® output is useful for Process Engineers, Supply Chain Optimization and
+                    International Trades for advance planning, oil selection, real-time monitoring, controlling and
+                    optimization of Refinery Operations.
+                </p>
+            </div>
+
+            <div class="middle-div-three">
+                <div class="middle-bottom-one">
+                    <div class="table-title">List of Tables</div>
+                    <div class="title-line"></div>
+
+                    <div class="toc">
+                        <ul>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">1</span>
+                            </li>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">1</span>
+                            </li>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">15</span>
+                            </li>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">45</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="middle-bottom-two">
+                    <div class="table-title">List of Figures</div>
+                    <div class="title-line"></div>
+
+                    <div class="toc">
+                        <ul>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">1</span>
+                            </li>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">1</span>
+                            </li>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">15</span>
+                            </li>
+                            <li>
+                                <span class="content-name">Details of crude mix-1 crude oil</span>
+                                <span class="dots"></span>
+                                <span class="page-number">45</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-div">
+            <div class="bottom-div-container">
+                <div class="bottom-div-container one">
+                    <p class="bottom-div-para"> Report No: <span class="report-number">SCR0003K</span> |
+                        <span>Thursday
+                            29th August, 2019</span>
+                        | <span>13:47</span>
+                    </p>
+                </div>
+                <div></div>
+                <div class="bottom-div-container two">
+                    <span>02</span>
+                </div>
+            </div>
+
+
+        </div>
+</body>
+
+</html>
