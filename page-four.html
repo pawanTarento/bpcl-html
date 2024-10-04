@@ -14,24 +14,17 @@
         body {
             margin: 0;
             padding: 0;
-            /* display: flex; */
-            /* justify-content: center;
-            align-items: center; */
             background-color: #f0f0f0;
             height: 100vh;
         }
 
         #main-div {
             position: relative;
-            left: 20px;
             width: 210mm;
-            /* A4 width */
             height: 297mm;
-            /* A4 height */
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-
 
         .bottom-div {
             position: absolute;
@@ -44,7 +37,6 @@
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
-
 
         .bottom-div-container {
             display: flex;
@@ -66,7 +58,6 @@
             text-align: right;
         }
 
-
         .bottom-div-container .two {
             flex: 1 1 auto;
             text-align: center;
@@ -74,20 +65,15 @@
             font-family: Arial;
             font-weight: 400;
             line-height: 16px;
-            text-align: center;
         }
 
         .top-div {
             padding: 20px;
-            margin-top: 25px;
             width: 85%;
             height: 2%;
             margin-left: 35px;
             border-bottom: 1px solid #CEDFEA;
         }
-
-
-
 
         .top-div-one {
             width: 105px;
@@ -106,51 +92,18 @@
         .bpmarrk-two-title {
             padding-left: 5px;
             margin-top: 3px;
-
             font-family: Arial;
             font-size: 12px;
             font-style: italic;
             font-weight: 500;
             line-height: 13.51px;
             text-align: left;
-
             color: #0E3D57;
             opacity: 80%;
-
-        }
-
-        .right-text-para-three {
-            font-family: Arial;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 13.8px;
-            text-align: left;
-            color: #FFFFFF;
-            opacity: 80%;
-
-        }
-
-        .right-text-para-two {
-            font-family: Arial;
-            font-size: 10px;
-            font-weight: 400;
-            line-height: 11.5px;
-            text-align: left;
-            color: #FFFFFF;
-            opacity: 80%;
-        }
-
-        .report-number {
-            color: white;
-        }
-
-        .bottom-div-para {
-            color: #FFFFFFB2;
         }
 
         .middle-div {
             margin-left: 35px;
-
         }
 
         .bpmmarrk-header {
@@ -159,36 +112,13 @@
             font-weight: 500;
             line-height: 27.05px;
             text-align: left;
-
             color: #0E3D57;
-
             padding-bottom: 10px;
-
-            border-bottom: 1px solid #CEDFEA
+            border-bottom: 1px solid #CEDFEA;
         }
 
         .middle-div-two {
             width: 90%;
-        }
-
-        .middle-para {
-
-            font-family: Arial;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 16px;
-            text-align: left;
-            color: #5E5E5E;
-            word-spacing: 3px;
-        }
-
-        .middle-div-three {
-            margin-top: 50px;
-            width: 80%;
-        }
-
-        .middle-div-one {
-            width: 94%;
         }
 
         .middle-table-header {
@@ -199,7 +129,6 @@
             text-align: left;
         }
 
-        /* for table content in the middle section */
         table {
             border-collapse: collapse;
             width: 100%;
@@ -210,29 +139,17 @@
             padding-top: 5px;
         }
 
-        /* Invisible table and cell borders */
-        table,
-        td {
-            border: none;
-        }
-
-        /* Add a gap after the 4th, 5th, and 6th rows */
         tr:nth-child(4),
         tr:nth-child(5),
         tr:nth-child(6),
         tr:nth-child(7) {
             padding-bottom: 20px;
-            /* Add a 20px gap */
         }
 
-        /* Ensure the table's cells maintain proper spacing */
         td {
             padding-top: 5px;
-            /* Optional: Add a top padding to the cells if needed */
         }
 
-
-        /* For the right column content (2nd column) */
         td:nth-child(2) {
             font-family: Arial;
             font-size: 12px;
@@ -241,14 +158,10 @@
             text-align: left;
             color: #5E5E5E;
             width: 70%;
-            /* Set the width to 70% */
             word-wrap: break-word;
-            /* Ensure text wraps */
             word-break: break-word;
-            /* Handle long words */
         }
 
-        /* For the left column content (1st column) */
         td:nth-child(2n+1) {
             font-family: Arial;
             font-size: 12px;
@@ -257,8 +170,68 @@
             text-align: start;
             width: 30%;
             vertical-align: top;
+        }
 
-            /* Set the width to 30% */
+        /* Styles for the new table in middle-div-four */
+        .middle-div-four {
+            margin-top: 50px;
+            width: 90%;
+        }
+
+        .middle-div-four table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #CEDFEA;
+            border-radius: 20px;
+        }
+
+        .middle-div-four thead {
+            background-color: #EAF3F8;
+            color: #000000;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+        }
+
+        .middle-div-four th,
+        .middle-div-four td {
+            border-bottom: 1px solid #CEDFEA;
+            text-align: left;
+            padding: 8px 0px 10px 20px;
+        }
+
+        /* Column width adjustments */
+        .middle-div-four th:nth-child(1),
+        .middle-div-four td:nth-child(1) {
+            width: 55%;
+            /* Crude oil properties column */
+        }
+
+        .middle-div-four th:nth-child(2),
+        .middle-div-four td:nth-child(2) {
+            width: 20%;
+            /* Inputs column */
+            color: #5E5E5E;
+            /* Change font color for Inputs */
+        }
+
+        .middle-div-four th:nth-child(3),
+        .middle-div-four td:nth-child(3) {
+            width: 25%;
+            /* Remaining width for ASTM method column */
+            color: #5E5E5E;
+            /* Change font color for ASTM method */
+        }
+
+        /* Styling for table data cells */
+        .middle-div-four td {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
         }
     </style>
 </head>
@@ -270,23 +243,17 @@
                 <div class="oil-small-image">
                     <!-- place image here. whether to keep it in an image tag or not -->
                 </div>
-                <span>
-
-                </span>
+                <span></span>
                 <div>
                     <p class="bpmarrk-two-title">BPMARRK 2.0</p>
                 </div>
             </div>
-
         </div>
 
         <div class="middle-div">
             <div class="middle-div-one">
-                <p class="bpmmarrk-header">
-                    Crude Details
-                </p>
+                <p class="bpmmarrk-header">Crude Details</p>
             </div>
-
 
             <div class="middle-div-two">
                 <p class="middle-table-header">Details of crude mix-1 crude oil</p>
@@ -322,7 +289,6 @@
                             Plot-2A, Udyog Kendra, Surajpur
                             Greater Noida, UP-201306 (India)</td>
                     </tr>
-
                     <tr>
                         <td>Crude name</td>
                         <td>crude mix-1</td>
@@ -341,15 +307,57 @@
                     </tr>
                 </table>
             </div>
+
+            <div class="middle-div-four">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crude oil properties</th>
+                            <th>Inputs</th>
+                            <th>ASTM method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>API</td>
+                            <td>29.57</td>
+                            <td>D4052</td>
+                        </tr>
+
+                        <tr>
+                            <td>Kinematic viscosity, cSt at 40°C</td>
+                            <td>9.010</td>
+                            <td>D445-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>Density, gm/cc at 15°C</td>
+                            <td>0.8785</td>
+                            <td>D4052</td>
+                        </tr>
+
+                        <tr>
+                            <td>Total Sulphur, wt%</td>
+                            <td>3.330</td>
+                            <td>D4294-98</td>
+                        </tr>
+
+                        <tr>
+                            <td>Micro carbon conradson residue (MCCR), wt%</td>
+                            <td>7.070</td>
+                            <td>D4530</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="bottom-div">
             <div class="bottom-div-container">
                 <div class="bottom-div-container one">
                     <p class="bottom-div-para"> Report No: <span class="report-number">SCR0003K</span> |
-                        <span>Thursday
-                            29th August, 2019</span>
-                        | <span>13:47</span>
+                        <span>Thursday 29th August, 2019</span> | <span>13:47</span>
                     </p>
                 </div>
                 <div></div>
@@ -357,9 +365,8 @@
                     <span>03</span>
                 </div>
             </div>
-
-
         </div>
+    </div>
 </body>
 
 </html>
