@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPCL Report SIX</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 5%;
+            background-color: #007EC4;
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .bottom-div-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 50px;
+            /* Adds 50px margin on both sides */
+            color: rgba(255, 255, 255, 0.7);
+            /* Semi-white color */
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .left-text {
+            /* Left aligned text */
+            text-align: left;
+            color: #FFFFFFB2;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 11.27px;
+            text-align: right;
+        }
+
+        .right-text {
+            /* Right aligned text */
+            text-align: right;
+            text-align: center;
+            color: white;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+        }
+
+        .report-number {
+            color: white;
+        }
+
+        .top-div {
+            padding: 20px;
+            width: 85%;
+            height: 2%;
+            margin-left: 35px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+        .top-div-one {
+            width: 105px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .bpmarrk-two-title {
+            padding-left: 5px;
+            margin-top: 3px;
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+            color: #0E3D57;
+            opacity: 80%;
+        }
+
+
+        .bpmmarrk-header {
+            font-family: Arial;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 27.05px;
+            text-align: left;
+            color: #0E3D57;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+        .content-box {
+            margin-top: 10px;
+            width: 97%;
+            height: 700px;
+            border-radius: 4px 0px 0px 0px;
+            border: 1px solid #CEDFEA;
+        }
+
+        .middle-div {
+            margin-left: 35px;
+            width: 93%;
+        }
+
+        .chart-container {
+            width: 90%;
+            height: 400px;
+            margin-bottom: 20px;
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+
+        .notes {
+            margin-left: 30px;
+            padding-right: 10px;
+        }
+
+        .notes-header {
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 13.52px;
+            text-align: left;
+
+        }
+
+        .notes-description {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 13px;
+            text-align: left;
+
+        }
+
+        .content-header {
+            margin-left: 30px;
+        }
+
+        .header-text {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13.52px;
+            color: #0E3D57;
+        }
+
+        .sub-text {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            color: #5E5E5E;
+        }
+
+        .inner-divider {
+            margin-top: 13px;
+            border: 1px solid #CEDFEA;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="top-div">
+            <div class="top-div-one">
+                <div class="oil-small-image">
+                    <!-- place image here. whether to keep it in an image tag or not -->
+                </div>
+                <span></span>
+                <div>
+                    <p class="bpmarrk-two-title">BPMARRK 2.0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-div">
+            <div class="content-box">
+                <div class="content-header">
+                    <p class="header-text">TBP distillation profile</p>
+                    <p class="sub-text">TBP distillation profile (wt% & vol%) of crude mix-1 crude oil.</p>
+                </div>
+
+                <div class="inner-divider">
+                    <!-- this divides the box horizontally -->
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="tbpChart"></canvas>
+                </div>
+
+                <div class="notes">
+                    <p class="notes-header">Notes</p>
+                    <p class="notes-description">A fluid catalytic cracking unit (FCCU) yield data has been generated
+                        using typical configuration with riser outlet temperature (ROT)
+                        of 500±C and vacuum gas oil (VGO, 360-565 cut) as feedstock derived from crude mix-1 crude oil.
+                        Predicted data validated with refinery
+                        data (Gasoline: IBP-186, LCO:186-343, HCO: 343-370 and CLO: 370+). BPMARRK® output can be used
+                        for comparison of typical FCCU
+                        yields while processing different quality of crude oils.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom-div">
+            <div class="bottom-div-container">
+                <p class="left-text"> Report No: <span class="report-number">SCR0003K</span> |
+                    <span>Thursday
+                        29th August, 2019</span>
+                    | <span>13:47</span>
+                </p>
+                <p class="right-text">01</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('tbpChart').getContext('2d');
+
+        const data = {
+            labels: ['0', '50', '100', '150', '200', '250', '300', '350', '400', '450', '500', '550', '600', '650'],
+            datasets: [
+                {
+                    label: 'Yield wt%',
+                    data: [0, 10, 20, 30, 40, 50, 60, 70, 80, 85, 90, 92, 95],
+                    borderColor: '#007EC4',
+                    backgroundColor: 'rgba(0, 126, 196, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'Yield vol%',
+                    data: [0, 12, 22, 32, 42, 52, 62, 65, 75, 80, 92, 94, 97],
+                    borderColor: '#FFC107',
+                    backgroundColor: 'rgba(255, 193, 7, 0.5)',
+                    fill: false,
+                    tension: 0.1
+                }
+            ]
+        };
+
+        const options = {
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Temperature (Deg °C)',
+                        font: {
+                            weight: 'bold',  // Make the Temperature label bold
+                            size: 14         // Optional: increase font size if needed
+                        }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Yield %',
+                        font: {
+                            weight: 'bold',  // Make the Yield label bold
+                            size: 14         // Optional: increase font size if needed
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+
+        const tbpChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+    </script>
+</body>
+
+</html>
