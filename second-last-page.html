@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second last page</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 5%;
+            background-color: #007EC4;
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .bottom-div-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 50px;
+            /* Adds 50px margin on both sides */
+            color: rgba(255, 255, 255, 0.7);
+            /* Semi-white color */
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .left-text {
+            /* Left aligned text */
+            text-align: left;
+            color: #FFFFFFB2;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 11.27px;
+            text-align: right;
+        }
+
+        .right-text {
+            /* Right aligned text */
+            text-align: right;
+            text-align: center;
+            color: white;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+        }
+
+        .report-number {
+            color: white;
+        }
+
+        .middle-div {
+            margin-left: 35px;
+            width: 93%;
+        }
+
+        .top-div {
+            padding: 20px;
+            width: 85%;
+            height: 2%;
+            margin-left: 35px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+        .top-div-one {
+            width: 105px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .bpmarrk-two-title {
+            padding-left: 5px;
+            margin-top: 3px;
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+            color: #0E3D57;
+            opacity: 80%;
+        }
+
+
+
+        .bpmmarrk-header {
+            font-family: Arial;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 27.05px;
+            text-align: left;
+            color: #0E3D57;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+
+        .content-box {
+            margin-top: 30px;
+            width: 97%;
+            height: 460px;
+            border-radius: 4px 0px 0px 0px;
+            border: 1px solid #CEDFEA;
+        }
+
+        .content-header {
+            margin-left: 30px;
+        }
+
+        .header-text {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13.52px;
+            color: #0E3D57;
+        }
+
+        .sub-text {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            color: #5E5E5E;
+        }
+
+        .inner-divider {
+            margin-top: 13px;
+            border: 1px solid #CEDFEA;
+            width: 100%;
+        }
+
+        .notes {
+            margin-top: 10px;
+            margin-left: 30px;
+            padding-right: 10px;
+        }
+
+        .notes-header {
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 13.52px;
+            text-align: left;
+
+        }
+
+        .notes-description {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 13px;
+            text-align: left;
+
+        }
+
+        .bar-graph-container {
+            margin-top: 10px;
+            width: 540px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="top-div">
+            <div class="top-div-one">
+                <div class="oil-small-image">
+                    <!-- place image here. whether to keep it in an image tag or not -->
+                </div>
+                <span></span>
+                <div>
+                    <p class="bpmarrk-two-title">BPMARRK 2.0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-div">
+            <div class="content-box">
+                <div class="content-header">
+                    <p class="header-text">Hydrogen consumption</p>
+                    <p class="sub-text">Hydrogen consumption of crude mix-1 crude oil.</p>
+                </div>
+
+                <div class="inner-divider">
+                    <!-- this divides the box horizontally -->
+                </div>
+
+                <div class="bar-graph-container">
+                    <canvas id="hydrogenConsumptionChart"></canvas>
+                </div>
+
+                <div class="notes">
+                    <p class="notes-header">Notes</p>
+                    <p class="notes-description">A typical hydroprocessing configuration consisting of atmospheric gas
+                        oil hydrotreater and vacuum gas oil hydrocracker (85% conversion, ≈ 65% distillates) has been
+                        considered for producing Euro-IV grade fuels. Predicted hydrogen consumption data has been
+                        validated with refinery data (Gas Oil: 240-360 and Vac Gas Oil: 360-565). BPMARRK® output can be
+                        used for comparison of typical hydrogen consumption while processing different quality of crude
+                        oils.</p>
+                </div>
+            </div>
+
+            <!-- second content box -->
+            <div class="content-box">
+                <div class="content-header">
+                    <p class="header-text">Fluid catalytic cracking unit yields</p>
+                    <p class="sub-text">FCCU yields of crude mix-1 crude oil.</p>
+                </div>
+
+                <div class="inner-divider">
+                    <!-- this divides the box horizontally -->
+                </div>
+
+                <div class="bar-graph-container">
+                    <canvas id="fccuYieldsChart"></canvas>
+
+                </div>
+
+                <div class="notes">
+                    <p class="notes-header">Notes</p>
+                    <p class="notes-description">A fluid catalytic cracking unit (FCCU) yield data has been generated
+                        using typical configuration with riser outlet temperature (ROT)
+                        of 500±C and vacuum gas oil (VGO, 360-565 cut) as feedstock derived from crude mix-1 crude oil.
+                        Predicted data validated with refinery
+                        data (Gasoline: IBP-186, LCO:186-343, HCO: 343-370 and CLO: 370+). BPMARRK® output can be used
+                        for comparison of typical FCCU
+                        yields while processing different quality of crude oils.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom-div">
+            <div class="bottom-div-container">
+                <p class="left-text"> Report No: <span class="report-number">SCR0003K</span> |
+                    <span>Thursday
+                        29th August, 2019</span>
+                    | <span>13:47</span>
+                </p>
+                <p class="right-text">01</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> <!-- Add this line -->
+
+    <script>
+        // Data for Hydrogen Consumption chart
+        const hydrogenConsumptionCtx = document.getElementById('hydrogenConsumptionChart').getContext('2d');
+        new Chart(hydrogenConsumptionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Whole Crude', 'Gas Oil', 'Vac Gas Oil'],
+                datasets: [{
+                    label: '', // Remove the label to hide the chart title
+                    data: [25, 35, 40],
+                    backgroundColor: [
+                        'rgba(255, 205, 86, 0.8)', // yellow
+                        'rgba(54, 162, 235, 0.8)', // blue
+                        'rgba(75, 192, 192, 0.8)', // cyan
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'H2 Consumption (kg/ton)',
+                            padding: { top: 10, bottom: 10 }
+                        },
+                        grid: {
+                            display: false // Remove grid lines
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 0,
+                            minRotation: 0,
+                            font: {
+                                size: 9 // Adjust size of x-axis labels
+                            }
+                        },
+                        grid: {
+                            display: false // Remove grid lines
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Remove legend
+                    },
+                    tooltip: {
+                        enabled: false // Disable tooltips
+                    }
+                },
+            }
+        });
+
+        // Data for FCCU Yields chart
+        const fccuYieldsCtx = document.getElementById('fccuYieldsChart').getContext('2d');
+        new Chart(fccuYieldsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Gas', 'LPG', 'Gasoline', 'LCO', 'HCO', 'CLO', 'Coke', 'Conversion'],
+                datasets: [{
+                    label: '', // Remove the label to hide the chart title
+                    data: [11.25, 10.61, 22.07, 12.10, 10.90, 21.80, 10, 10],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)', // red
+                        'rgba(54, 162, 235, 0.8)', // blue
+                        'rgba(255, 205, 86, 0.8)', // yellow
+                        'rgba(75, 192, 192, 0.8)', // cyan
+                        'rgba(153, 102, 255, 0.8)', // purple
+                        'rgba(255, 159, 64, 0.8)',  // orange,
+                        'magenta',
+                        'green'
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'FCCU Yields (kg/ton)',
+                            padding: { top: 10, bottom: 10 }
+                        },
+                        grid: {
+                            display: false // Remove grid lines
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            autoSkip: false,
+                            maxRotation: 0,
+                            minRotation: 0,
+                            font: {
+                                size: 9 // Adjust size of x-axis labels
+                            }
+                        },
+                        grid: {
+                            display: false // Remove grid lines
+                        }
+                    }
+                },
+                plugins: {
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        color: '#000',
+                        formatter: (value) => {
+                            return value; // Display the value
+                        }
+                    },
+                    legend: {
+                        display: false // Remove legend
+                    },
+                    tooltip: {
+                        enabled: false // Disable tooltips
+                    }
+                },
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
