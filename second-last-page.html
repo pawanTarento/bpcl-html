@@ -131,9 +131,9 @@
 
 
         .content-box {
-            margin-top: 30px;
+            margin-top: 10px;
             width: 97%;
-            height: 460px;
+            height: 480px;
             border-radius: 4px 0px 0px 0px;
             border: 1px solid #CEDFEA;
         }
@@ -280,7 +280,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> <!-- Add this line -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
     <script>
         // Data for Hydrogen Consumption chart
@@ -333,9 +333,20 @@
                     },
                     tooltip: {
                         enabled: false // Disable tooltips
+                    },
+                    legend: {
+                        display: false,
+                        position: 'top'
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        formatter: (value) => value.toFixed(1), // Show values with one decimal point
                     }
                 },
-            }
+            },
+            plugins: [ChartDataLabels] // Add plugin to the chart
+
         });
 
         // Data for FCCU Yields chart
@@ -391,19 +402,19 @@
                     datalabels: {
                         anchor: 'end',
                         align: 'end',
-                        color: '#000',
-                        formatter: (value) => {
-                            return value; // Display the value
-                        }
+                        formatter: (value) => value.toFixed(1), // Show values with one decimal point
                     },
                     legend: {
                         display: false // Remove legend
                     },
                     tooltip: {
                         enabled: false // Disable tooltips
-                    }
+                    },
+
                 },
-            }
+
+            },
+            plugins: [ChartDataLabels]
         });
 
 
