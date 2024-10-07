@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Page - BPCL report</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            left: 0px;
+            width: 210mm;
+            /* A4 width */
+            height: 297mm;
+            /* A4 height */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .disclaimer {
+            position: absolute;
+            width: 85%;
+            top: 390px;
+            left: 39px;
+            gap: 0px;
+            opacity: 0px;
+
+        }
+
+        .disclaimer-para {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 14px;
+            text-align: left;
+            color: #5E5E5E;
+        }
+
+        .top-div-one {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .bpcl-logo-image {
+            padding: 6px;
+            width: 53px;
+            height: 45px;
+            background-image: url('./bpcl_logo.png');
+            background-size: contain;
+            /* Ensures the image covers the entire div */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+        }
+
+        .bpmarrk-two {
+
+            padding-left: 5px;
+            margin-top: 3px;
+
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+
+
+        }
+
+        .right-text-para-three {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 13.8px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+
+        }
+
+        .right-text-para-two {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            text-align: left;
+            color: #FFFFFF;
+            opacity: 80%;
+        }
+
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 55%;
+            background: radial-gradient(166.24% 200.7% at 2.85% -16.94%, #007EC4 41.46%, #FFF7C6 92.91%);
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding-bottom: 20px;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Centers the text horizontally */
+            text-align: center;
+            width: 100%;
+            /* Ensures full width for centering */
+        }
+
+        .copyright span {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            color: #FFFFFF;
+            /* Optional: if you want white text */
+        }
+
+        .support {
+            margin-left: 35px;
+            position: absolute;
+            top: 279px;
+        }
+
+        .support p {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 14px;
+            text-align: left;
+            color: #FFFFFF;
+        }
+
+        .support p:first-child {
+            margin-bottom: 30px;
+            /* Larger gap after the first "Support" heading */
+        }
+
+        .support p:nth-child(5) {
+            margin-bottom: 30px;
+        }
+
+        .support p:nth-child(6) {
+            margin-bottom: 30px;
+        }
+
+        .support p:last-child {
+            margin-bottom: 0;
+            /* No margin after the last paragraph */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="disclaimer">
+            <p class="disclaimer-para">Disclaimer: All the data are predicted through BPMARRK® which is a well tested
+                methodology developed
+                using large data sets from laboratory and refinery. Still crude oil is a naturally occurring, unrefined
+                petroleum product comprising mixture of hydrocarbons and other organic material, extracted from natural
+                underground reservoirs and therefore properties and behavior are sometime highly influenced by its
+                origin and crude oil formation. Such crude oils might not be within range of BPMARRK® for accurate
+                estimation.</p>
+        </div>
+
+        <div class="bottom-div">
+
+            <div class="top-div-one">
+
+                <div class="top-div-one left">
+                    <div class="oil-small-image">
+                        <!-- place image here. whether to keep it in an image tag or not -->
+                    </div>
+                    <span>
+
+                    </span>
+                    <div>
+                        <p class="bpmarrk-two">BPMARRK 2.0</p>
+                    </div>
+                </div>
+
+                <div class="top-div-one right">
+                    <div class="bpcl-logo-image">
+                        <!-- place image here. whether to keep it in an image tag or not -->
+                    </div>
+                    <div class="right-text">
+                        <p class="right-text-para-one">
+                            <!-- deliberately kept empty -->
+                        </p>
+                        <p class="right-text-para-two">Powered by</p>
+                        <p class="right-text-para-three">Bharat Petroleum Corp. Ltd</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="support">
+                <p>Support</p>
+                <p>Corporate R&D Centre</p>
+                <p>Bharat Petroleum Corporation Limited</p>
+                <p>Plot-2A, Udyog Kendra, Surajpur</p>
+                <p>Greater Noida, UP 201306 (India)</p>
+                <p> Ph: +91-120-2354001 | Fax: +91-120-2354172</p>
+                <p>Email: z_bpmarrk@bharatpetroleum.in</p>
+            </div>
+
+            <div class="copyright">
+                <span>© 2024 Bharat Petroleum Corporation Limited</span>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
