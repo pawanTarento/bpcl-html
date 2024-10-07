@@ -117,18 +117,26 @@
         }
 
         .middle-div-two {
-            margin-top: 16px;
-            width: 90%;
+            margin-top: 20px;
+            width: 97%;
             height: 221px;
             border-radius: 4px;
             border: 1px solid #CEDFEA;
         }
 
         /*----->> Upper Pie Chart Table<<---- */
+
+        .chart {
+            width: 250px;
+            height: 250px;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+
         .content-box {
             margin-top: 30px;
-            width: 519px;
-            height: 312px;
+            width: 97%;
+            height: 350px;
             border-radius: 4px 0px 0px 0px;
             border: 1px solid #CEDFEA;
         }
@@ -159,6 +167,65 @@
             width: 100%;
         }
 
+        .vertical-separator {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .legend-para-text {
+            text-align: left;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13.52px;
+            text-align: left;
+
+        }
+
+        .legends-div {
+            width: 200px;
+            margin-top: 40px;
+            margin-right: 40px;
+        }
+
+        .legend-color {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin-right: 5px;
+            /* border: 1px solid #cedfea;    */
+        }
+
+
+        .legend-values-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            margin-bottom: 8px;
+
+            gap: 0px;
+            opacity: 0px;
+
+        }
+
+        .legend-description {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            text-align: left;
+
+        }
+
+        .legend-percentage {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 11.5px;
+            text-align: left;
+
+        }
 
         /*----->> Upper Pie Chart Table<<---- */
 
@@ -233,7 +300,11 @@
                         <p class="header-text">TBP distillation profile</p>
                         <p class="sub-text">Yields (%wt) of refinery products from crude mix-1 crude oil</p>
                     </div>
-                    <div class="inner-divider"></div>
+
+                    <div class="inner-divider">
+                        <!-- this divides the box horizontally -->
+                    </div>
+
                     <div class="vertical-separator">
                         <!-- left side div -->
                         <div class="chart">
@@ -243,69 +314,60 @@
                         <!-- right side div -->
                         <div class="legends-div">
                             <div class="legend-text-div">
-                                <p class="legend-para-text">Legend</p>
+                                <p class="legend-para-text">Legends</p>
                             </div>
 
                             <div class="legend-values-div">
                                 <div class="legend-values-row">
-                                    <div>
-                                        <span class="legend-color"></span>
-                                        <span class="legend-description"></span>
+                                    <div style="display: flex; align-items: center;">
+                                        <span class="legend-color" style="background-color: #007EC4;"></span>
+                                        <span class="legend-description" style="padding-left: 5px;">Gas+LPG</span>
                                     </div>
                                     <div>
-                                        <p class="legend-percentage"></p>
-                                    </div>
-                                </div>
-
-                                <div class="legend-values-row">
-                                    <div>
-                                        <span class="legend-color"></span>
-                                        <span class="legend-description"></span>
-                                    </div>
-                                    <div>
-                                        <p class="legend-percentage"></p>
+                                        <span class="legend-percentage">16.34 %</span>
                                     </div>
                                 </div>
 
                                 <div class="legend-values-row">
-                                    <div>
-                                        <span class="legend-color"></span>
-                                        <span class="legend-description"></span>
+                                    <div style="display: flex; align-items: center;">
+                                        <span class="legend-color" style="background-color: #7FC1E5;"></span>
+                                        <span class="legend-description" style="padding-left: 5px;">Naptha</span>
                                     </div>
                                     <div>
-                                        <p class="legend-percentage"></p>
-                                    </div>
-                                </div>
-
-                                <div class="legend-values-row">
-                                    <div>
-                                        <span class="legend-color"></span>
-                                        <span class="legend-description"></span>
-                                    </div>
-                                    <div>
-                                        <p class="legend-percentage"></p>
+                                        <span class="legend-percentage">16.34 %</span>
                                     </div>
                                 </div>
 
                                 <div class="legend-values-row">
-                                    <div>
-                                        <span class="legend-color"></span>
-                                        <span class="legend-description"></span>
+                                    <div style="display: flex; align-items: center;">
+                                        <span class="legend-color" style="background-color: #ABE1FF;"></span>
+                                        <span class="legend-description" style="padding-left: 5px;">Kerosene</span>
                                     </div>
                                     <div>
-                                        <p class="legend-percentage"></p>
+                                        <span class="legend-percentage">16.34 %</span>
                                     </div>
                                 </div>
 
                                 <div class="legend-values-row">
-                                    <div>
-                                        <span class="legend-color"></span>
-                                        <span class="legend-description"></span>
+                                    <div style="display: flex; align-items: center;">
+                                        <span class="legend-color" style="background-color: #A4BBC8;"></span>
+                                        <span class="legend-description" style="padding-left: 5px;">Vac Gas Oil</span>
                                     </div>
                                     <div>
-                                        <p class="legend-percentage"></p>
+                                        <span class="legend-percentage">16.34 %</span>
                                     </div>
                                 </div>
+
+                                <div class="legend-values-row">
+                                    <div style="display: flex; align-items: center;">
+                                        <span class="legend-color" style="background-color: #FCDB05;"></span>
+                                        <span class="legend-description" style="padding-left: 5px;">Vac Residue</span>
+                                    </div>
+                                    <div>
+                                        <span class="legend-percentage">16.34 %</span>
+                                    </div>
+                                </div>
+
 
 
                             </div>
@@ -366,6 +428,44 @@
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            plugins: [ChartDataLabels],
+            type: 'pie',
+            data: {
+                labels: [
+
+                ],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [10, 16, 16, 16, 28, 16],
+                    backgroundColor: [
+                        '#007EC4',
+                        '#7FC1E5',
+                        '#ABE1FF',
+                        '#A4BBC8',
+                        '#FFF29C;',
+                        '#FCDB05'
+                    ],
+                }],
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'right',
+                    },
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
