@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPCL Report FOUR</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 100vh;
+        }
+
+        #main-div {
+            position: relative;
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .bottom-div {
+            position: absolute;
+            bottom: 0;
+            left: 11px;
+            width: 97%;
+            height: 5%;
+            background-color: #007EC4;
+            border-color: blue;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .bottom-div-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 50px;
+            /* Adds 50px margin on both sides */
+            color: rgba(255, 255, 255, 0.7);
+            /* Semi-white color */
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .left-text {
+            /* Left aligned text */
+            text-align: left;
+            color: #FFFFFFB2;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 11.27px;
+            text-align: right;
+        }
+
+        .right-text {
+            /* Right aligned text */
+            text-align: right;
+            text-align: center;
+            color: white;
+            font-family: Arial;
+            font-weight: 400;
+            line-height: 16px;
+        }
+
+        .report-number {
+            color: white;
+        }
+
+        .top-div {
+            padding: 20px;
+            width: 85%;
+            height: 2%;
+            margin-left: 35px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+        .top-div-one {
+            width: 105px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .oil-small-image {
+            width: 20px;
+            height: 20px;
+            background-image: url('./Layer_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .bpmarrk-two-title {
+            padding-left: 5px;
+            margin-top: 3px;
+            font-family: Arial;
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 13.51px;
+            text-align: left;
+            color: #0E3D57;
+            opacity: 80%;
+        }
+
+        .middle-div {
+            margin-left: 35px;
+        }
+
+        .bpmmarrk-header {
+            font-family: Arial;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 27.05px;
+            text-align: left;
+            color: #0E3D57;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #CEDFEA;
+        }
+
+        .middle-div-two {
+            width: 90%;
+        }
+
+        .middle-table-header {
+            font-family: Arial;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18.03px;
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 90%;
+        }
+
+        td {
+            text-align: left;
+            padding-top: 5px;
+        }
+
+        tr:nth-child(4),
+        tr:nth-child(5),
+        tr:nth-child(6),
+        tr:nth-child(7) {
+            padding-bottom: 20px;
+        }
+
+        td {
+            padding-top: 5px;
+        }
+
+        td:nth-child(2) {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+            color: #5E5E5E;
+            width: 70%;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        td:nth-child(2n+1) {
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: start;
+            width: 30%;
+            vertical-align: top;
+        }
+
+        /* Styles for the new table in middle-div-four */
+        .middle-div-four {
+            margin-top: 50px;
+            width: 90%;
+        }
+
+        .middle-div-four table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #CEDFEA;
+            border-radius: 20px;
+        }
+
+        .middle-div-four thead {
+            background-color: #EAF3F8;
+            color: #000000;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 20px;
+            text-align: left;
+        }
+
+        .middle-div-four th,
+        .middle-div-four td {
+            border-bottom: 1px solid #CEDFEA;
+            text-align: left;
+            padding: 8px 0px 10px 20px;
+        }
+
+        /* Column width adjustments */
+        .middle-div-four th:nth-child(1),
+        .middle-div-four td:nth-child(1) {
+            width: 55%;
+            /* Crude oil properties column */
+        }
+
+        .middle-div-four th:nth-child(2),
+        .middle-div-four td:nth-child(2) {
+            width: 20%;
+            /* Inputs column */
+            color: #5E5E5E;
+            /* Change font color for Inputs */
+        }
+
+        .middle-div-four th:nth-child(3),
+        .middle-div-four td:nth-child(3) {
+            width: 25%;
+            /* Remaining width for ASTM method column */
+            color: #5E5E5E;
+            /* Change font color for ASTM method */
+        }
+
+        /* Styling for table data cells */
+        .middle-div-four td {
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+        }
+
+        .table-description {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+
+
+        .table-description p {
+            margin: 0;
+        }
+
+        .table-description p:nth-child(1) {
+            color: #5E5E5E;
+            font-family: Arial;
+            font-size: 9px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: left;
+        }
+
+        .table-description p:nth-child(2) {
+            color: #000000;
+            font-family: Arial;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: left;
+
+        }
+
+        .sub-heading {
+            color: #0E3D57;
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 13.52px;
+            text-align: left;
+            padding-bottom: 5px;
+            border-bottom: 0.5px solid #CEDFEA;
+        }
+
+        .blend-percentage {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .progress-circle {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: conic-gradient(#007EC4 0% 30%, #e0e0e0 30% 100%);
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .progress-circle::before {
+            content: "";
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-div">
+        <div class="top-div">
+            <div class="top-div-one">
+                <div class="oil-small-image">
+                    <!-- place image here. whether to keep it in an image tag or not -->
+                </div>
+                <span></span>
+                <div>
+                    <p class="bpmarrk-two-title">BPMARRK 2.0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-div">
+            <div class="middle-div-one">
+                <p class="bpmmarrk-header">Crude Details</p>
+            </div>
+
+            <div class="middle-div-two">
+                <p class="middle-table-header">Physical property data of crude mix-1 crude oil</p>
+            </div>
+
+            <div class="middle-div-four">
+                <p class="sub-heading">Crude Name</p>
+                <div class="table-description">
+                    <div class="oil-field">
+                        <p class="first">Oil Field</p>
+                        <p class="second">XYZ BPCL</p>
+                    </div>
+                    <div class="country">
+                        <p class="first">Source/Country</p>
+                        <p class="second">India</p>
+                    </div>
+                    <div class="region">
+                        <p class="first">Region</p>
+                        <p class="second">Asia</p>
+                    </div>
+                    <div class="blend-percentage">
+
+                        <div class="progress-circle">
+                        </div>
+
+                        <div>
+                            <p class="first">Blend Percentage</p>
+                            <p class="second">30%</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crude oil properties</th>
+                            <th>Inputs</th>
+                            <th>ASTM method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>API</td>
+                            <td>29.57</td>
+                            <td>D4052</td>
+                        </tr>
+
+                        <tr>
+                            <td>Kinematic viscosity, cSt at 40°C</td>
+                            <td>9.010</td>
+                            <td>D445-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>Density, gm/cc at 15°C</td>
+                            <td>0.8785</td>
+                            <td>D4052</td>
+                        </tr>
+
+                        <tr>
+                            <td>Total Sulphur, wt%</td>
+                            <td>3.330</td>
+                            <td>D4294-98</td>
+                        </tr>
+
+                        <tr>
+                            <td>Micro carbon conradson residue (MCCR), wt%</td>
+                            <td>7.070</td>
+                            <td>D4530</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="middle-div-four">
+                <p class="sub-heading">Crude Name</p>
+                <div class="table-description">
+                    <div class="oil-field">
+                        <p class="first">Oil Field</p>
+                        <p class="second">XYZ BPCL</p>
+                    </div>
+                    <div class="country">
+                        <p class="first">Source/Country</p>
+                        <p class="second">India</p>
+                    </div>
+                    <div class="region">
+                        <p class="first">Region</p>
+                        <p class="second">Asia</p>
+                    </div>
+                    <div class="blend-percentage">
+
+                        <div class="progress-circle">
+                        </div>
+
+                        <div>
+                            <p class="first">Blend Percentage</p>
+                            <p class="second">30%</p>
+                        </div>
+
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crude oil properties</th>
+                            <th>Inputs</th>
+                            <th>ASTM method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>API</td>
+                            <td>29.57</td>
+                            <td>D4052</td>
+                        </tr>
+
+                        <tr>
+                            <td>Kinematic viscosity, cSt at 40°C</td>
+                            <td>9.010</td>
+                            <td>D445-01</td>
+                        </tr>
+
+                        <tr>
+                            <td>Density, gm/cc at 15°C</td>
+                            <td>0.8785</td>
+                            <td>D4052</td>
+                        </tr>
+
+                        <tr>
+                            <td>Total Sulphur, wt%</td>
+                            <td>3.330</td>
+                            <td>D4294-98</td>
+                        </tr>
+
+                        <tr>
+                            <td>Micro carbon conradson residue (MCCR), wt%</td>
+                            <td>7.070</td>
+                            <td>D4530</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="bottom-div">
+            <div class="bottom-div-container">
+                <p class="left-text"> Report No: <span class="report-number">SCR0003K</span> |
+                    <span>Thursday
+                        29th August, 2019</span>
+                    | <span>13:47</span>
+                </p>
+                <p class="right-text">01</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
