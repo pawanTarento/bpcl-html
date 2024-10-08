@@ -222,7 +222,7 @@
                 </div>
 
                 <div class="bar-graph-container">
-                    <canvas id="hydrogenConsumptionChart"></canvas>
+                    <canvas id="dcuYieldChart"></canvas>
                 </div>
 
                 <div class="notes">
@@ -257,7 +257,7 @@
 
     <script>
         // Data for Hydrogen Consumption chart
-        const hydrogenConsumptionCtx = document.getElementById('hydrogenConsumptionChart').getContext('2d');
+        const hydrogenConsumptionCtx = document.getElementById('dcuYieldChart').getContext('2d');
         new Chart(hydrogenConsumptionCtx, {
             type: 'bar',
             data: {
@@ -266,9 +266,12 @@
                     label: '', // Remove the label to hide the chart title
                     data: [8, 4.37, 12.88, 24.69, 19.10, 30.96],
                     backgroundColor: [
-                        'rgba(255, 205, 86, 0.8)', // yellow
-                        'rgba(54, 162, 235, 0.8)', // blue
-                        'rgba(75, 192, 192, 0.8)', // cyan
+                        '#A4BBC8',
+                        '#007EC4',
+                        '#FFF29C',
+                        '#ABE1FF',
+                        '#edb82b',
+                        '#5480f1'
                     ]
                 }]
             },
@@ -322,73 +325,6 @@
 
         });
 
-        // Data for FCCU Yields chart
-        const fccuYieldsCtx = document.getElementById('fccuYieldsChart').getContext('2d');
-        new Chart(fccuYieldsCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Gas', 'LPG', 'Gasoline', 'LCO', 'HCO', 'CLO', 'Coke', 'Conversion'],
-                datasets: [{
-                    label: '', // Remove the label to hide the chart title
-                    data: [11.25, 10.61, 22.07, 12.10, 10.90, 21.80, 10, 10],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.8)', // red
-                        'rgba(54, 162, 235, 0.8)', // blue
-                        'rgba(255, 205, 86, 0.8)', // yellow
-                        'rgba(75, 192, 192, 0.8)', // cyan
-                        'rgba(153, 102, 255, 0.8)', // purple
-                        'rgba(255, 159, 64, 0.8)',  // orange,
-                        'magenta',
-                        'green'
-                    ]
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        position: 'left',
-                        title: {
-                            display: true,
-                            text: 'FCCU Yields (kg/ton)',
-                            padding: { top: 10, bottom: 10 }
-                        },
-                        grid: {
-                            display: false // Remove grid lines
-                        }
-                    },
-                    x: {
-                        ticks: {
-                            autoSkip: false,
-                            maxRotation: 0,
-                            minRotation: 0,
-                            font: {
-                                size: 9 // Adjust size of x-axis labels
-                            }
-                        },
-                        grid: {
-                            display: false // Remove grid lines
-                        }
-                    }
-                },
-                plugins: {
-                    datalabels: {
-                        anchor: 'end',
-                        align: 'end',
-                        formatter: (value) => value.toFixed(1), // Show values with one decimal point
-                    },
-                    legend: {
-                        display: false // Remove legend
-                    },
-                    tooltip: {
-                        enabled: false // Disable tooltips
-                    },
-
-                },
-
-            },
-            plugins: [ChartDataLabels]
-        });
 
 
     </script>
