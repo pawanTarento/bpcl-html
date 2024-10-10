@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spherical Water Drop Vector</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        svg {
+            width: 150px;
+            height: 150px;
+        }
+
+        .text {
+            margin-left: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Spherical water drop vector image -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <!-- More spherical water drop shape -->
+            <path d="M50,10 C35,45 35,75 50,85 C65,75 65,45 50,10 Z" fill="#4fa9f6" stroke="#3b82b6" stroke-width="3" />
+            <!-- Inner shine effect -->
+            <ellipse cx="45" cy="40" rx="10" ry="15" fill="white" opacity="0.5" />
+        </svg>
+
+        <!-- Text next to the droplet -->
+        <div class="text">This is a water droplet</div>
+    </div>
+
+</body>
+
+</html>
